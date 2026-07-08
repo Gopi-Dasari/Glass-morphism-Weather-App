@@ -3,76 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glass Weather App</title>
+    <title>India Weather App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="weather-card">
-        <!-- Location -->
+        <!-- Location & Time -->
         <div class="location">
-            <h2>📍 San Francisco</h2>
+            <div>
+                <h2 id="city">🇮🇳 Mumbai, India</h2>
+                <span class="date">Wednesday, 10:30 AM IST</span>
+            </div>
             <span class="icon">☀️</span>
         </div>
 
         <!-- Temperature -->
         <div class="temp">
-            <div class="main-temp">72<sup>°F</sup></div>
-            <div class="condition">Clear Sky</div>
+            <div class="main-temp">
+                <span id="temp">32</span><sup>°C</sup>
+            </div>
+            <div class="condition" id="condition">Clear Sky</div>
             <div class="high-low">
-                <span>↑ 76°</span>
-                <span>↓ 64°</span>
+                <span>↑ <span id="high">34</span>°</span>
+                <span>↓ <span id="low">28</span>°</span>
             </div>
         </div>
 
-        <!-- Details -->
+        <!-- Details Grid -->
         <div class="details">
             <div class="detail-item">
-                <div class="value">65%</div>
-                <div class="label">Humidity</div>
+                <div class="value" id="humidity">78%</div>
+                <div class="label">💧 Humidity</div>
             </div>
             <div class="detail-item">
-                <div class="value">12 mph</div>
-                <div class="label">Wind</div>
+                <div class="value" id="wind">15 km/h</div>
+                <div class="label">💨 Wind</div>
             </div>
             <div class="detail-item">
-                <div class="value">30.1</div>
-                <div class="label">Pressure</div>
+                <div class="value" id="pressure">1008</div>
+                <div class="label">📊 Pressure</div>
+            </div>
+            <div class="detail-item">
+                <div class="value" id="uv">9</div>
+                <div class="label">☀️ UV Index</div>
+            </div>
+            <div class="detail-item">
+                <div class="value" id="sunrise">6:15 AM</div>
+                <div class="label">🌅 Sunrise</div>
+            </div>
+            <div class="detail-item">
+                <div class="value" id="sunset">7:30 PM</div>
+                <div class="label">🌇 Sunset</div>
             </div>
         </div>
 
-        <!-- Forecast -->
-        <div class="forecast">
+        <!-- 7-Day Forecast -->
+        <div class="forecast" id="forecast">
             <div class="forecast-day">
-                <div class="day">Mon</div>
-                <div class="high">74°</div>
-                <div class="low">62°</div>
-            </div>
-            <div class="forecast-day">
-                <div class="day">Tue</div>
-                <div class="high">76°</div>
-                <div class="low">63°</div>
-            </div>
-            <div class="forecast-day">
-                <div class="day">Wed</div>
-                <div class="high">71°</div>
-                <div class="low">60°</div>
+                <div class="day">Today</div>
+                <div class="icon">☀️</div>
+                <div class="high">34°</div>
+                <div class="low">28°</div>
             </div>
             <div class="forecast-day">
                 <div class="day">Thu</div>
-                <div class="high">73°</div>
-                <div class="low">61°</div>
+                <div class="icon">⛅</div>
+                <div class="high">33°</div>
+                <div class="low">27°</div>
             </div>
             <div class="forecast-day">
                 <div class="day">Fri</div>
-                <div class="high">75°</div>
-                <div class="low">63°</div>
+                <div class="icon">🌤️</div>
+                <div class="high">32°</div>
+                <div class="low">26°</div>
+            </div>
+            <div class="forecast-day">
+                <div class="day">Sat</div>
+                <div class="icon">☁️</div>
+                <div class="high">31°</div>
+                <div class="low">26°</div>
+            </div>
+            <div class="forecast-day">
+                <div class="day">Sun</div>
+                <div class="icon">🌧️</div>
+                <div class="high">30°</div>
+                <div class="low">25°</div>
+            </div>
+            <div class="forecast-day">
+                <div class="day">Mon</div>
+                <div class="icon">🌤️</div>
+                <div class="high">32°</div>
+                <div class="low">27°</div>
+            </div>
+            <div class="forecast-day">
+                <div class="day">Tue</div>
+                <div class="icon">☀️</div>
+                <div class="high">33°</div>
+                <div class="low">28°</div>
             </div>
         </div>
 
-        <!-- Search -->
+        <!-- Air Quality -->
+        <div class="air-quality">
+            <div class="aqi-label">🌿 Air Quality Index (AQI)</div>
+            <div class="aqi-bar">
+                <div class="aqi-fill" style="width: 45%;"></div>
+            </div>
+            <div class="aqi-value">Moderate (45) - Mumbai</div>
+        </div>
+
+        <!-- Search & Refresh -->
         <div class="search-box">
-            <input type="text" placeholder="🔍 Search city...">
-            <button>Search</button>
+            <input type="text" id="searchInput" placeholder="🔍 Search Indian city..." />
+            <button id="searchBtn">Search</button>
+            <button id="refreshBtn">🔄</button>
+        </div>
+
+        <!-- Weather Alerts -->
+        <div class="alert">
+            ⚠️ High UV index today - Wear sunscreen and stay hydrated
         </div>
     </div>
 </body>
